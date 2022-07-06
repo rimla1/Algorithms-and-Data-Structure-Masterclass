@@ -1,4 +1,4 @@
-// It has 5n + 2 operations
+// It has 5n + 2 operations [Depends on number that function received]
 function addUpToN(n) {
   let total = 0;
   for (let i = 1; i <= n; i++) {
@@ -7,7 +7,7 @@ function addUpToN(n) {
   return total;
 }
 
-// It has 3 operations
+// It has 3 operations [Does not depends on number that function received]
 function addUpToM(m) {
   return (m * (m + 1)) / 2;
 }
