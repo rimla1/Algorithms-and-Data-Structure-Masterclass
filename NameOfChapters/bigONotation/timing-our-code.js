@@ -1,3 +1,4 @@
+// It has 5n + 2 operations
 function addUpToN(n) {
   let total = 0;
   for (let i = 1; i <= n; i++) {
@@ -6,6 +7,7 @@ function addUpToN(n) {
   return total;
 }
 
+// It has 3 operations
 function addUpToM(m) {
   return (m * (m + 1)) / 2;
 }
