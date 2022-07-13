@@ -27,4 +27,18 @@ function countUpAndDown(n) {
   console.log("Back down. Bye!");
 }
 
-countUpAndDown(10);
+// countUpAndDown(10);
+
+//[NESTED LOOP]
+// We have O(n)-(grandfather) 0(n)-(father) O(n)-(son)     Solution: O(n^3)
+function printAllPairs(n) {
+  for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++) {
+      for (var k = 0; k < n; k++) {
+        console.log(i, j, k);
+      }
+    }
+  }
+}
+
+// printAllPairs(3);
