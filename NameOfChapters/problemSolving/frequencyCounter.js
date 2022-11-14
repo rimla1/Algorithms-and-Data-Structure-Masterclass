@@ -1,18 +1,53 @@
 // O(n^2) - indexOf is a loop nested in for loop
+// function same(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < arr1.length; i++) {
+//     let correctIndex = arr2.indexOf(arr1[i] ** 2);
+//     console.log(correctIndex);
+//     if (correctIndex === -1) {
+//       return false;
+//     }
+
+//     arr2.splice(correctIndex, 1);
+//   }
+//   return true;
+// }
+
+// console.log(same([2, 10, 4, 3], [16, 100, 9, 4]));
+
 function same(arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
-  for (let i = 0; i < arr1.length; i++) {
-    let correctIndex = arr2.indexOf(arr1[i] ** 2);
-    console.log(correctIndex);
-    if (correctIndex === -1) {
+  let frequencyCounter1 = {};
+  let frequencyCounter2 = {};
+  for (let val of arr1) {
+    frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+  }
+  for (let val of arr2) {
+    frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+  }
+  for (let key in frequencyCounter1) {
+    console.log(key);
+    if (!(key ** 2 in frequencyCounter2)) {
       return false;
     }
-
-    arr2.splice(correctIndex, 1);
+    console.log("nakon ovoga iznad", key);
+    if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+      return false;
+    }
   }
   return true;
 }
 
-console.log(same([2, 10, 4, 3], [16, 100, 9, 4]));
+console.log(same([1, 5, 3, 3, 10], [1, 100, 9, 25, 9]));
+
+// const arr3 = [10, 20, 30, 10, 10, 50, 100];
+// const frequencyCounter3 = {};
+// for (let num of arr3) {
+//   console.log(frequencyCounter3);
+//   frequencyCounter3[num] = (frequencyCounter3[num] || 0) + 1;
+// }
+// console.log(frequencyCounter3);
