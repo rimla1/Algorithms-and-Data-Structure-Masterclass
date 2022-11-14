@@ -12,23 +12,39 @@
 //   return pairs;
 // }
 
-function sumZero(arr) {
-  let left = 0;
-  let right = arr.length - 1;
-  while (left < right) {
-    let sum = arr[left] + arr[right];
-    if (sum === 0) {
-      return [arr[left], arr[right]];
-    } else if (sum > 0) {
-      right--;
-    } else {
-      left++;
-    }
-  }
-}
+// function sumZero(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
+//   while (left < right) {
+//     let sum = arr[left] + arr[right];
+//     if (sum === 0) {
+//       return [arr[left], arr[right]];
+//     } else if (sum > 0) {
+//       right--;
+//     } else {
+//       left++;
+//     }
+//   }
+// }
 
 // let t1 = performance.now();
-console.log(sumZero([-22, -4, -2, -1, 0, 1, 3, 4, 100]));
+// console.log(sumZero([-22, -4, -2, -1, 0, 1, 3, 4, 100]));
 // let t2 = performance.now();
 
 // console.log(`Time elapsed: ${(t2 - t1) / 1000} seconds. `);
+
+const countUniqueValues = (arr) => {
+  // Make a frequencyCounter that will keep track of unique values
+  const uniqueCounter = [];
+  for (let elementOfArray of arr) {
+    if (uniqueCounter.length === 0) {
+      uniqueCounter.push(elementOfArray);
+    }
+    if (elementOfArray !== uniqueCounter[uniqueCounter.length - 1]) {
+      uniqueCounter.push(elementOfArray);
+    }
+  }
+  return uniqueCounter.length;
+};
+
+console.log(countUniqueValues([1, 1, 2, 4, 5, 5, 6, 7]));
