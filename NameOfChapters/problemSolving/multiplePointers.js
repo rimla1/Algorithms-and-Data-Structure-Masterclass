@@ -34,7 +34,6 @@
 // console.log(`Time elapsed: ${(t2 - t1) / 1000} seconds. `);
 
 const countUniqueValues = (arr) => {
-  // Make a frequencyCounter that will keep track of unique values
   const uniqueCounter = [];
   for (let elementOfArray of arr) {
     if (uniqueCounter.length === 0) {
@@ -47,4 +46,15 @@ const countUniqueValues = (arr) => {
   return uniqueCounter.length;
 };
 
-console.log(countUniqueValues([1, 1, 2, 4, 5, 5, 6, 7]));
+console.log(
+  countUniqueValues([
+    "Amel",
+    "Amel",
+    "Amel",
+    "Benan",
+    "Benan",
+    "Bilal",
+    "Cristiano",
+    "Chris",
+  ])
+);
