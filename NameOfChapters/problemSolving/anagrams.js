@@ -53,4 +53,4 @@ const validAnagram = (first, second) => {
   return true;
 };
 
-validAnagram("rrimla", "almirr");
+console.log(validAnagram("rrrimla", "almirrr"));
