@@ -33,28 +33,45 @@
 
 // console.log(`Time elapsed: ${(t2 - t1) / 1000} seconds. `);
 
+// const countUniqueValues = (arr) => {
+//   const uniqueCounter = [];
+//   for (let elementOfArray of arr) {
+//     if (uniqueCounter.length === 0) {
+//       uniqueCounter.push(elementOfArray);
+//     }
+//     if (elementOfArray !== uniqueCounter[uniqueCounter.length - 1]) {
+//       uniqueCounter.push(elementOfArray);
+//     }
+//   }
+//   return uniqueCounter.length;
+// };
+
+// console.log(
+//   countUniqueValues([
+//     "Amel",
+//     "Amel",
+//     "Amel",
+//     "Benan",
+//     "Benan",
+//     "Bilal",
+//     "Cristiano",
+//     "Chris",
+//   ])
+// );
+
 const countUniqueValues = (arr) => {
-  const uniqueCounter = [];
-  for (let elementOfArray of arr) {
-    if (uniqueCounter.length === 0) {
-      uniqueCounter.push(elementOfArray);
-    }
-    if (elementOfArray !== uniqueCounter[uniqueCounter.length - 1]) {
-      uniqueCounter.push(elementOfArray);
+  let i = 0;
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
     }
   }
-  return uniqueCounter.length;
+  return i + 1;
 };
 
 console.log(
   countUniqueValues([
-    "Amel",
-    "Amel",
-    "Amel",
-    "Benan",
-    "Benan",
-    "Bilal",
-    "Cristiano",
-    "Chris",
+    1, 1, 1, 2, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 10,
   ])
 );
