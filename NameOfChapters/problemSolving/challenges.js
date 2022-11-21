@@ -25,9 +25,19 @@ const sameFrequency = (positiveNumber1, positiveNumber2) => {
   return true;
 };
 
-console.log(sameFrequency(44472, 24447));
+// console.log(sameFrequency(44472, 24447));
 
-// Test 1: Length of the number [Passed]
-// Test 2: Existence of single number to secondNumber [Passed]
-// Test 3: Number of occurence of specific number [Passed]
-// Test
+// Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
+const areThereDuplicates = (...args) => {
+  let frequency = {};
+  for (let num of args) {
+    frequency[num] = (frequency[num] || 0) + 1;
+    if (frequency[num] > 1) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(areThereDuplicates(7, 1, 5, 22, 3, 4, 66));
