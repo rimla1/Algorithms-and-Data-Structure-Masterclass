@@ -11,28 +11,38 @@
 //   return false;
 // };
 
+function averagePair(arr, num) {
+  let start = 0;
+  let end = arr.length - 1;
+  while (start < end) {
+    let avg = (arr[start] + arr[end]) / 2;
+    if (avg === num) return true;
+    else if (avg < num) start++;
+    else end--;
+  }
+  return false;
+}
+
+console.log(averagePair([1, 5, 22, 23, 27, 29], 3));
+
 // Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string.
 //In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
 
-const isSubsequence = (string1, string2) => {
-  //   let i = 0;
-  //   for (let j = 0; j < string2.length; j++) {
-  //     console.log(string1[i], string2[j]);
-  //   }
-  let indexOfLetter = [];
-  for (let i = 0; i < string1.length; i++) {
-    let num = string2.indexOf(string1[i]);
-    if (num == -1) {
-      return false;
-    }
-    let previousIndex = string2.indexOf(string1[i - 1]);
-    if (previousIndex > num) {
-      return false;
-    }
-    console.log(previousIndex, num);
-    indexOfLetter.push(num);
-  }
-  return true;
-};
+// const isSubsequence = (string1, string2) => {
+//   let indexOfLetter = [];
+//   for (let i = 0; i < string1.length; i++) {
+//     let num = string2.indexOf(string1[i]);
+//     if (num == -1) {
+//       return false;
+//     }
+//     let previousIndex = string2.indexOf(string1[i - 1]);
+//     if (previousIndex > num) {
+//       return false;
+//     }
+//     console.log(previousIndex, num);
+//     indexOfLetter.push(num);
+//   }
+//   return true;
+// };
 
-console.log(isSubsequence("aalmir", "OaOOlOOmOOiOOr"));
+// console.log(isSubsequence("aalmir", "OaOOlOOmOOiOOr"));
