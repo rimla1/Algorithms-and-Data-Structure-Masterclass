@@ -7,7 +7,7 @@ let instructor = {
 const resultKeys = Object.keys(instructor);
 const resultValues = Object.values(instructor);
 const resultEntries = Object.entries(instructor);
-const resultHasOwnProperty = Object.hasOwnProperty("firstName");
+const resultHasOwnProperty = instructor.hasOwnProperty("firstName");
 
 console.log(resultKeys);
 console.log(resultValues);

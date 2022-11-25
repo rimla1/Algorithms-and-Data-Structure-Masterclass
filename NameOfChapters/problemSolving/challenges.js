@@ -48,7 +48,7 @@
 //   return true;
 // }
 
-// console.log(sameFrequency(122345, 112345));
+// console.log(sameFrequency(1569, 1695));
 
 // Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
 // const areThereDuplicates = (...args) => {
@@ -76,24 +76,27 @@
 //   return false;
 // }
 
-function areThereDuplicates(...args) {
-  // Two pointers
-  args.sort((a, b) => a - b);
-  console.log(args);
-  let start = 0;
-  let next = 1;
-  while (next < args.length) {
-    if (args[start] === args[next]) {
-      return true;
-    }
-    start++;
-    next++;
-  }
-  return false;
-}
-
-// function areThereDuplicates() {
-//   return new Set(arguments).size !== arguments.length;
+// function areThereDuplicates(...args) {
+//   // Two pointers
+//   args.sort((a, b) => a - b);
+//   console.log(args);
+//   let start = 0;
+//   let next = 1;
+//   while (next < args.length) {
+//     if (args[start] === args[next]) {
+//       return true;
+//     }
+//     start++;
+//     next++;
+//   }
+//   return false;
 // }
 
-console.log(areThereDuplicates(7, 66, 1, 5, 22, 3, "2", 2, 4));
+// // function areThereDuplicates() {
+// //   return new Set(arguments).size !== arguments.length;
+// // }
+
+// console.log(areThereDuplicates(7, 66, 1, 5, 22, 3, "2", 2, 4));
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.splice(2, 1, "Lemon", "Kiwi"));
+console.log(fruits);
