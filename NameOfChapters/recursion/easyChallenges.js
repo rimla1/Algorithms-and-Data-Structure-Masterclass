@@ -59,20 +59,27 @@
 
 // console.log(productOfArray([1, 2, 3, 4, 5, 6]));
 
-// Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function
-const recursiveRange = (number) => {
-  let total = 0;
+// // Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function
+// const recursiveRange = (number) => {
+//   let total = 0;
 
-  const recursiveFunc = (number) => {
-    if (number === 0) return;
-    total += number;
-    recursiveFunc(number - 1);
-  };
+//   const recursiveFunc = (number) => {
+//     if (number === 0) return;
+//     total += number;
+//     recursiveFunc(number - 1);
+//   };
 
-  recursiveFunc(number);
+//   recursiveFunc(number);
 
-  return total;
-};
+//   return total;
+// };
 
-console.log(recursiveRange(7));
-// number(7): number(num - 1)
+// console.log(recursiveRange(7));
+// // number(7): number(num - 1) 6 + 5 + 4 + 6
+
+function fib(n) {
+  if (n <= 2) return 1;
+  return fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(13));
