@@ -40,21 +40,39 @@
 
 // Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
 
-const productOfArray = (arrayOfNumbers) => {
-  // Outer variable that won't reset to default everytime (in this case one)
-  let product = 1;
+// const productOfArray = (arrayOfNumbers) => {
+//   // Outer variable that won't reset to default everytime (in this case one)
+//   let product = 1;
 
-  const recursiveFunc = (arrayOfNumbers) => {
-    // base case
-    if (arrayOfNumbers.length === 0) return;
-    product *= arrayOfNumbers[arrayOfNumbers.length - 1];
-    arrayOfNumbers.pop(arrayOfNumbers.length - 1);
-    console.log(arrayOfNumbers);
-    recursiveFunc(arrayOfNumbers);
+//   const recursiveFunc = (arrayOfNumbers) => {
+//     // base case
+//     if (arrayOfNumbers.length === 0) return;
+//     product *= arrayOfNumbers[arrayOfNumbers.length - 1];
+//     arrayOfNumbers.pop(arrayOfNumbers.length - 1);
+//     console.log(arrayOfNumbers);
+//     recursiveFunc(arrayOfNumbers);
+//   };
+
+//   recursiveFunc(arrayOfNumbers);
+//   return product;
+// };
+
+// console.log(productOfArray([1, 2, 3, 4, 5, 6]));
+
+// Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function
+const recursiveRange = (number) => {
+  let total = 0;
+
+  const recursiveFunc = (number) => {
+    if (number === 0) return;
+    total += number;
+    recursiveFunc(number - 1);
   };
 
-  recursiveFunc(arrayOfNumbers);
-  return product;
+  recursiveFunc(number);
+
+  return total;
 };
 
-console.log(productOfArray([1, 2, 3, 4, 5, 6]));
+console.log(recursiveRange(7));
+// number(7): number(num - 1)
