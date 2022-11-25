@@ -25,10 +25,18 @@ function sumRange(num) {
 
 console.log(sumRange(4));
 
+// const factorial = (n) => {
+//   let result = 1;
+//   for (let i = 0; i < n; i++) {
+//     result = result * (n - i);
+//   }
+//   return result;
+// };
+
 const factorial = (n) => {
   let result = 1;
-  for (let i = 0; i < n; i++) {
-    result = result * (n - i);
+  for (let i = n; i > 0; i--) {
+    result *= i;
   }
   return result;
 };
