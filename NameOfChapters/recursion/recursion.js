@@ -23,7 +23,7 @@ function sumRange(num) {
   return num + sumRange(num - 1);
 }
 
-console.log(sumRange(4));
+// console.log(sumRange(4));
 
 // const factorial = (n) => {
 //   let result = 1;
@@ -33,12 +33,17 @@ console.log(sumRange(4));
 //   return result;
 // };
 
+// const factorial = (n) => {
+//   let result = 1;
+//   for (let i = n; i > 0; i--) {
+//     result *= i;
+//   }
+//   return result;
+// };
+
 const factorial = (n) => {
-  let result = 1;
-  for (let i = n; i > 0; i--) {
-    result *= i;
-  }
-  return result;
+  if (n === 1) return 1;
+  return n * factorial(n - 1);
 };
 
-console.log(factorial(4));
+console.log(factorial(6));
