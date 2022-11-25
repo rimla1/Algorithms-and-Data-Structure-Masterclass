@@ -41,9 +41,30 @@ function sumRange(num) {
 //   return result;
 // };
 
-const factorial = (n) => {
-  if (n === 1) return 1;
-  return n * factorial(n - 1);
-};
+// const factorial = (n) => {
+//   if (n === 1) return 1;
+//   return n * factorial(n - 1);
+// };
 
-console.log(factorial(6));
+// console.log(factorial(6));
+
+function collectOddValues(arr) {
+  let result = [];
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) {
+      return;
+    }
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0]);
+    }
+    helper(helperInput.slice(1));
+  }
+
+  helper(arr);
+
+  return result;
+}
+
+console.log(collectOddValues([1, 2, 5, 10, 20, 44, 55, 100]));
