@@ -24,3 +24,13 @@ function sumRange(num) {
 }
 
 console.log(sumRange(4));
+
+const factorial = (n) => {
+  let result = 1;
+  for (let i = 0; i < n; i++) {
+    result = result * (n - i);
+  }
+  return result;
+};
+
+console.log(factorial(4));
