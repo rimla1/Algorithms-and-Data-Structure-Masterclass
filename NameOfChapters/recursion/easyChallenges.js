@@ -25,15 +25,36 @@
 //   return num * factorial(num - 1);
 // };
 
-const factorial = (num) => {
-  let valueToDecrease = num;
-  let result = 1;
-  for (let i = 0; i < num; i++) {
-    result *= valueToDecrease;
-    console.log(num);
-    valueToDecrease--;
-  }
-  return result;
+// const factorial = (num) => {
+//   let valueToDecrease = num;
+//   let result = 1;
+//   for (let i = 0; i < num; i++) {
+//     result *= valueToDecrease;
+//     console.log(num);
+//     valueToDecrease--;
+//   }
+//   return result;
+// };
+
+// console.log(factorial(5));
+
+// Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
+
+const productOfArray = (arrayOfNumbers) => {
+  // Outer variable that won't reset to default everytime (in this case one)
+  let product = 1;
+
+  const recursiveFunc = (arrayOfNumbers) => {
+    // base case
+    if (arrayOfNumbers.length === 0) return;
+    product *= arrayOfNumbers[arrayOfNumbers.length - 1];
+    arrayOfNumbers.pop(arrayOfNumbers.length - 1);
+    console.log(arrayOfNumbers);
+    recursiveFunc(arrayOfNumbers);
+  };
+
+  recursiveFunc(arrayOfNumbers);
+  return product;
 };
 
-console.log(factorial(5));
+console.log(productOfArray([1, 2, 3, 4, 5, 6]));
