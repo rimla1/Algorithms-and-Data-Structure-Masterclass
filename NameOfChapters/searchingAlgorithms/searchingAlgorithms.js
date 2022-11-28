@@ -49,18 +49,37 @@
 //   return -1;
 // }
 
-function binarySearch(arr, elem) {
-  var start = 0;
-  var end = arr.length - 1;
-  var middle = Math.floor((start + end) / 2);
-  while (arr[middle] !== elem && start <= end) {
-    if (elem < arr[middle]) end = middle - 1;
-    else start = middle + 1;
-    middle = Math.floor((start + end) / 2);
-  }
-  return arr[middle] === elem ? middle : -1;
-}
+// function binarySearch(arr, elem) {
+//   var start = 0;
+//   var end = arr.length - 1;
+//   var middle = Math.floor((start + end) / 2);
+//   while (arr[middle] !== elem && start <= end) {
+//     if (elem < arr[middle]) end = middle - 1;
+//     else start = middle + 1;
+//     middle = Math.floor((start + end) / 2);
+//   }
+//   return arr[middle] === elem ? middle : -1;
+// }
 
-console.log(
-  binarySearch([1, 5, 10, 11, 12, 14, 15, 17, 19, 20, 22, 23, 25, 37, 40], 14)
-);
+// console.log(
+//   binarySearch([1, 5, 10, 11, 12, 14, 15, 17, 19, 20, 22, 23, 25, 37, 40], 14)
+// );
+
+const subString = (longString, shortString) => {
+  let counter = 0;
+  for (let i = 0; i < longString.length; i++) {
+    if (longString[i] === shortString[0]) {
+      if (longString[i + 1] === shortString[1]) {
+        if (longString[i + 2] === shortString[2]) {
+          counter += 1;
+        }
+      }
+    }
+  }
+  return counter;
+};
+
+console.log(subString("tidamtidamtidam", "dam"));
+
+// shortString: "dam"
+// longString: "tidamtidamtidam"
