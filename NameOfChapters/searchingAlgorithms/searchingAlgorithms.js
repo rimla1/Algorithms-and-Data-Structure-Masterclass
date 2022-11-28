@@ -65,21 +65,41 @@
 //   binarySearch([1, 5, 10, 11, 12, 14, 15, 17, 19, 20, 22, 23, 25, 37, 40], 14)
 // );
 
+// const subString = (longString, shortString) => {
+//   let counter = 0;
+//   for (let i = 0; i < longString.length; i++) {
+//     if (longString[i] === shortString[0]) {
+//       if (longString[i + 1] === shortString[1]) {
+//         if (longString[i + 2] === shortString[2]) {
+//           counter += 1;
+//         }
+//       }
+//     }
+//   }
+//   return counter;
+// };
+
 const subString = (longString, shortString) => {
   let counter = 0;
   for (let i = 0; i < longString.length; i++) {
-    if (longString[i] === shortString[0]) {
-      if (longString[i + 1] === shortString[1]) {
-        if (longString[i + 2] === shortString[2]) {
-          counter += 1;
-        }
+    for (let j = 0; j < shortString.length; j++) {
+      if (shortString[j] !== longString[i + j]) {
+        console.log("Break Here!");
+        break;
+      }
+      if (j === shortString.length - 1) {
+        counter++;
       }
     }
   }
   return counter;
 };
 
-console.log(subString("tidamtidamtidam", "dam"));
+console.log(subString("TIDAMTIDAMTIDAMPODA", "DAM"));
+// i+j[0]: T !== j[0]: D
+// i+j[1]: I !== j[0]: D
 
-// shortString: "dam"
-// longString: "tidamtidamtidam"
+// i+j[2]: D !== j[0]: D
+// i+j[3]: A !== j[1]: A
+// i+j[4]: M !== j[2]: M
+// j=2 => if (j === shortString.length - 1) => if(2 === 2) TRUE
