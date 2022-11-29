@@ -11,5 +11,11 @@ const numberSort = (arrayOfNumbers) => {
   return arrayOfNumbers.sort();
 };
 
+const numberCompare = (num1, num2) => {
+  return num1 - num2;
+};
+
+[6, 4, 15, 10].sort(numberCompare);
+
 stringSort(arrayOfString);
 numberSort(arrayOfNumbers);
