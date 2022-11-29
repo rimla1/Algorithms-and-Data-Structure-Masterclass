@@ -6,4 +6,10 @@ const stringSort = (arrayOfString) => {
   return arrayOfString.sort();
 };
 
+const numberSort = (arrayOfNumbers) => {
+  console.log(arrayOfNumbers.sort());
+  return arrayOfNumbers.sort();
+};
+
 stringSort(arrayOfString);
+numberSort(arrayOfNumbers);
