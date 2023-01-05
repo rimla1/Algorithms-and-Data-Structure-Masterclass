@@ -53,4 +53,4 @@ const bubbleSort = (arr) => {
   return arr;
 };
 
-console.log(bubbleSort([6, 1, 2, 3, 4, 5]));
+// console.log(bubbleSort([6, 1, 2, 3, 4, 5]));
