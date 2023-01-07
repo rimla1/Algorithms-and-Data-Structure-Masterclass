@@ -5,7 +5,6 @@ const merge = (arr1, arr2) => {
   let j = 0;
 
   while (i < arr1.length && j < arr2.length) {
-    console.log(arr1[i], arr2[j]);
     if (arr1[i] < arr2[j]) {
       sortedArr.push(arr1[i]);
       i++;
@@ -28,17 +27,23 @@ const merge = (arr1, arr2) => {
   return sortedArr;
 };
 
-// merge([1, 5, 20, 700, 1000], [7, 14, 99, 100, 120]);
-
 // Sort part
 const mergeSort = (arr) => {
-  if (arr.length <= 1) return;
+  console.log("Ovo je trenutno array koji proveravamo: ", arr);
+  if (arr.length <= 1) {
+    return arr;
+  }
   let mid = Math.floor(arr.length / 2);
-  let left = arr.slice(0, mid);
-  let right = arr.slice(mid);
-
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
   console.log(left, right);
-  return;
+  return merge(left, right);
 };
 
-mergeSort([22, 7, 13, 14, 100]);
+mergeSort([22, 7, 13, 14, 100, 77, 18, 23, 99]);
+
+// Expected Values
+// Current Array: [22, 7, 13, 14, 100, 77, 18, 23, 99] -> [22, 7, 13, 14] -> [22, 7] -> [22] -> [7]
+
+// Left: [22, 7, 13, 14] ==> [22, 7] ==> [22]
+// Right: [100, 77, 18, 23, 99] ==> [13, 14] ==> [7]
