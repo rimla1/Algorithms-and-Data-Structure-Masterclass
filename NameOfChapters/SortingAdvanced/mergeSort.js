@@ -31,15 +31,11 @@ const merge = (arr1, arr2) => {
 // merge([1, 5, 20, 700, 1000], [7, 14, 99, 100, 120]);
 
 // Sort part
-// Break array into halves untill
-
-const breakArray = (arr) => {
-  let arr1 = arr.slice(0, Math.round(arr.length / 2));
-  let arr2 = arr.slice(Math.round(arr.length / 2), arr.length);
-
-  const sortedArr = merge(arr1, arr2);
-  console.log(sortedArr);
-  return sortedArr;
+const mergeSort = (arr) => {
+  if (arr.length <= 1) return;
+  let mid = Math.floor(arr.length / 2);
+  console.log(mid);
+  return;
 };
 
-breakArray([1, 22, 45, 70, 15, 100, 250]); // -> [1, 22, 45, 70] - [15, 100, 250]
+mergeSort([22, 7, 13, 14, 100]);
