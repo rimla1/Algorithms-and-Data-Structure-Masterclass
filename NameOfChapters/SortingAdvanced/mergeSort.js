@@ -34,7 +34,10 @@ const merge = (arr1, arr2) => {
 const mergeSort = (arr) => {
   if (arr.length <= 1) return;
   let mid = Math.floor(arr.length / 2);
-  console.log(mid);
+  let left = arr.slice(0, mid);
+  let right = arr.slice(mid);
+
+  console.log(left, right);
   return;
 };
 
