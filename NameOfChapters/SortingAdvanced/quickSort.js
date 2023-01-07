@@ -28,16 +28,18 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
   }
 
   swap(arr, start, swapIndex);
-  console.log(arr);
 
   return swapIndex;
 };
 
-// pivot = (0)
-pivot([4, 8, 2, 1, 5, 7, 6, 3]);
-// [4, 8, 2, 1, 5, 7, 6, 3]
-// [4, 2, 8, 1, 5, 7, 6, 3]
-// [4, 2, 1, 8, 5, 7, 6, 3]
-// [4, 2, 1, 3, 5, 7, 6, 8]
-// Final switch after loop
-// [3, 2, 1, 4, 5, 7, 6, 8]
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+    quickSort(arr, left, pivotIndex - 1);
+    quickSort(arr, pivotIndex + 1, right);
+  }
+
+  return arr;
+};
+
+console.log(quickSort([7, 700, -250, -4, 4, 8, 2, 1, 5, 7, 6, 3]));
