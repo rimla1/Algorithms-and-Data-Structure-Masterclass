@@ -1,5 +1,10 @@
-function getDigit(num, i) {
+const getDigit = (num, i) => {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
-}
+};
 
-console.log(getDigit(7562, 2));
+const digitCount = (num) => {
+  if (num === 0) return 1;
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+};
+
+console.log(digitCount(4298));
