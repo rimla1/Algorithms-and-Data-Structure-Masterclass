@@ -1,14 +1,9 @@
-let arrg = [10, 20];
-let num = 21;
+let i = 0;
 
-if (num > arrg[2]) {
-  console.log("lol");
+while (i < 5) {
+  console.log(`Kada se ovo pozove i je jednako ${i}`);
+  i++;
+  if (i === 5) {
+    console.log("what");
+  }
 }
-
-if (!(num > arrg[2])) {
-  console.log("lolz");
-}
-
-arrg.push(undefined);
-console.log(arrg);
-console.log(arrg[2]);
