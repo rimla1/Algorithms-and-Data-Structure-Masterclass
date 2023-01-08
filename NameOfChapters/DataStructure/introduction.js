@@ -29,6 +29,11 @@ class Student {
     console.log(average);
     return average;
   }
+
+  static enrollStudents() {
+    console.log("Enrolling students");
+    return "ENROLLING STUDENTS";
+  }
 }
 
 const student1 = new Student("Almir", "Muminovic", 4);
