@@ -5,8 +5,28 @@ class Node {
   }
 }
 
-let firstNode = new Node("Gde");
-firstNode.next = new Node("Si");
-firstNode.next.next = new Node("Bre");
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 
-console.log(firstNode);
+  push(val) {
+    const node = new Node(val);
+    if (this.length === 0) {
+      this.head = val;
+      this.tail = val;
+    }
+    this.tail = val;
+    this.length += 1;
+  }
+}
+
+const list = new SinglyLinkedList();
+list.push(27);
+list.push(21);
+list.push(13);
+console.log(list.head);
+console.log(list.tail);
+console.log(list.length);
