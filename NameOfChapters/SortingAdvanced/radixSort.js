@@ -17,7 +17,10 @@ const mostDigits = (nums) => {
 
 const radixSort = (nums) => {
   let maxDigitCount = mostDigits(nums);
-
+  for (let k = 0; k < maxDigitCount; k++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    console.log(digitBuckets);
+  }
   return maxDigitCount;
 };
 
