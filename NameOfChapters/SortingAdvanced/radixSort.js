@@ -7,13 +7,18 @@ const digitCount = (num) => {
   return Math.floor(Math.log10(Math.abs(num))) + 1;
 };
 
-const radixSort = (arr) => {
+const mostDigits = (nums) => {
   let largestDigit = 0;
-  for (let i = 0; i < arr.length; i++) {
-    largestDigit = Math.max(digitCount(arr[i]), largestDigit);
+  for (let i = 0; i < nums.length; i++) {
+    largestDigit = Math.max(digitCount(nums[i]), largestDigit);
   }
-  console.log(largestDigit);
   return largestDigit;
+};
+
+const radixSort = (nums) => {
+  let maxDigitCount = mostDigits(nums);
+
+  return maxDigitCount;
 };
 
 radixSort([7, 4, 200, 22, 87, 1594, 9943]);
