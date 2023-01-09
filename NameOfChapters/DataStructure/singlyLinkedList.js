@@ -31,18 +31,38 @@ class SinglyLinkedList {
       this.tail = this.head;
     }
     this.tail.next = node;
-    console.log(this.tail.next);
     this.tail = node;
     this.length += 1;
-    console.log(this);
     return this;
+  }
+
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+    let current = this.head;
+    let newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
 }
 
+// [27, 21, 13]
+//   c
+//   nt
+
 const list = new SinglyLinkedList();
-list.push(27);
-list.push(21);
-list.push(13);
-console.log(list.head);
-console.log(list.tail);
-console.log(list.length);
+list.push(27); // [27] head: 27 tail: 27 length: 1
+list.push(21); // [27, 21] head: 27 tail: 21 length: 2
+list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
+list.pop(); // [27, 21] head: 27 tail: 21 length: 2
