@@ -83,7 +83,6 @@ class SinglyLinkedList {
       current = current.next;
       counter++;
     }
-    console.log("Ovo je vrednost: ", current);
     return current;
   }
 
