@@ -12,18 +12,6 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
-  //   push(val) {
-  //     const node = new Node(val);
-  //     if (this.length === 0) {
-  //       this.head = val;
-  //       this.tail = val;
-  //     }
-  //     this.tail = val;
-  //     this.length += 1;
-  //     console.log(this);
-  //     return this;
-  //   }
-
   push(val) {
     const node = new Node(val);
     if (!this.head) {
@@ -55,6 +43,20 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  shift() {
+    if (!this.head) {
+      return undefined;
+    }
+    let current = this.head;
+    this.head = current.next;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
 // [27, 21, 13]
@@ -66,3 +68,6 @@ list.push(27); // [27] head: 27 tail: 27 length: 1
 list.push(21); // [27, 21] head: 27 tail: 21 length: 2
 list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
 list.pop(); // [27, 21] head: 27 tail: 21 length: 2
+list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
+list.shift(); // [21, 45] head: 21 tail: 45 length: 2
+console.log(list);
