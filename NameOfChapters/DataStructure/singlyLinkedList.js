@@ -60,8 +60,6 @@ class SinglyLinkedList {
 
   unshift(val) {
     const node = new Node(val);
-    console.log("Ovo je node: ", node);
-    console.log(this.head);
 
     if (!this.head) {
       this.head = node;
@@ -79,12 +77,13 @@ class SinglyLinkedList {
     if (index < 0 || index >= this.length) {
       return null;
     }
-    let value = this.head;
-    for (let i = 0; i < index; i++) {
-      value = value.next;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
     }
-    console.log("Ovo je value za indeks: ", value);
-    return value;
+    return current;
   }
 }
 
@@ -99,4 +98,3 @@ list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
 list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
 list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
 list.get(4); // 45
-list.get(2); // 79
