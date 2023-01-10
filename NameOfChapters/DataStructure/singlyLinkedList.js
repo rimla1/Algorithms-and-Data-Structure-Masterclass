@@ -74,6 +74,18 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+    let value = this.head;
+    for (let i = 0; i < index; i++) {
+      value = value.next;
+    }
+    console.log("Ovo je value za indeks: ", value);
+    return value;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -84,4 +96,7 @@ list.pop(); // [27, 21] head: 27 tail: 21 length: 2
 list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
 list.shift(); // [21, 45] head: 21 tail: 45 length: 2
 list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
-console.log(list);
+list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
+list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
+list.get(4); // 45
+list.get(2); // 79
