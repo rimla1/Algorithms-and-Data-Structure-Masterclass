@@ -57,6 +57,18 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  unshift(val) {
+    const node = new Node(val);
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    }
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+    return this;
+  }
 }
 
 // [27, 21, 13]
@@ -70,4 +82,9 @@ list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
 list.pop(); // [27, 21] head: 27 tail: 21 length: 2
 list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
 list.shift(); // [21, 45] head: 21 tail: 45 length: 2
+list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
 console.log(list);
+
+const testList = new SinglyLinkedList();
+testList.unshift(120);
+console.log("Ovo je test lista: ", testList);
