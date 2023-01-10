@@ -60,20 +60,21 @@ class SinglyLinkedList {
 
   unshift(val) {
     const node = new Node(val);
+    console.log("Ovo je node: ", node);
+    console.log(this.head);
+
     if (!this.head) {
       this.head = node;
       this.tail = this.head;
+    } else {
+      node.next = this.head;
+      this.head = node;
     }
-    node.next = this.head;
-    this.head = node;
+
     this.length++;
     return this;
   }
 }
-
-// [27, 21, 13]
-//   c
-//   nt
 
 const list = new SinglyLinkedList();
 list.push(27); // [27] head: 27 tail: 27 length: 1
@@ -84,7 +85,3 @@ list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
 list.shift(); // [21, 45] head: 21 tail: 45 length: 2
 list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
 console.log(list);
-
-const testList = new SinglyLinkedList();
-testList.unshift(120);
-console.log("Ovo je test lista: ", testList);
