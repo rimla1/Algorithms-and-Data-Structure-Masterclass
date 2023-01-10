@@ -83,7 +83,7 @@ class SinglyLinkedList {
       current = current.next;
       counter++;
     }
-    console.log(current);
+    console.log("Ovo je vrednost: ", current);
     return current;
   }
 
@@ -107,6 +107,6 @@ list.shift(); // [21, 45] head: 21 tail: 45 length: 2
 list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
 list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
 list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
-// list.get(4); // 45
+list.get(4); // 45
 list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
 list.get(2); // 100
