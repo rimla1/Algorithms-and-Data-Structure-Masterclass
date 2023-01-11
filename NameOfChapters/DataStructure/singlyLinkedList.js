@@ -132,23 +132,45 @@ class SinglyLinkedList {
     let removedNode = nodeBeforeRemovedNode.next;
     nodeBeforeRemovedNode.next = removedNode.next;
     this.length--;
-    console.log(removedNode);
     return true;
+  }
+
+  reverse() {
+    if (this.length <= 0) {
+      return null;
+    }
+    if (this.length === 1) {
+      this.head = this.get(0);
+      this.tail = this.get(0);
+    }
+    if (this.length === 2) {
+      let oldHead = this.head;
+      this.head = this.tail;
+      this.tail = oldHead;
+    }
+    return this;
   }
 }
 
-const list = new SinglyLinkedList();
-list.push(27); // [27] head: 27 tail: 27 length: 1
-list.push(21); // [27, 21] head: 27 tail: 21 length: 2
-list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
-list.pop(); // [27, 21] head: 27 tail: 21 length: 2
-list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
-list.shift(); // [21, 45] head: 21 tail: 45 length: 2
-list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
-list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
-list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
-list.get(4); // 45
-list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
-list.get(2); // 100
-list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
-list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+// const list = new SinglyLinkedList();
+// list.push(27); // [27] head: 27 tail: 27 length: 1
+// list.push(21); // [27, 21] head: 27 tail: 21 length: 2
+// list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
+// list.pop(); // [27, 21] head: 27 tail: 21 length: 2
+// list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
+// list.shift(); // [21, 45] head: 21 tail: 45 length: 2
+// list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
+// list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
+// list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
+// list.get(4); // 45
+// list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
+// list.get(2); // 100
+// list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
+// list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+
+const testList = new SinglyLinkedList();
+testList.push(27); // [27] head: 27 tail: 27 length: 1
+// testList.push(21); // [27, 21] head: 27 tail: 21 length: 2
+console.log(testList);
+testList.reverse();
+console.log(testList);
