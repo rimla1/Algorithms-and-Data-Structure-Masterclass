@@ -113,10 +113,25 @@ class SinglyLinkedList {
     previousNode.next = newNode;
     newNode.next = nextNode;
     this.length++;
-    console.log(previousNode);
-    console.log(newNode);
-    console.log(nextNode);
+    return true;
+  }
 
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.shift();
+    }
+
+    if (index === this.length) {
+      this.pop();
+    }
+    let nodeBeforeRemovedNode = this.get(index - 1);
+    let nodeAfterRemovedNode = this.get(index + 1);
+    nodeBeforeRemovedNode.next = nodeAfterRemovedNode;
+    this.length--;
     return true;
   }
 }
