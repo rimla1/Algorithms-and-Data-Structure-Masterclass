@@ -156,37 +156,33 @@ class SinglyLinkedList {
     this.head = oldT;
     this.tail = oldH;
 
-    // for (let i = 1; i < this.length; i++) {
-    //   let currentNode = this.get(i);
-    //   console.log("Trenutni Node je: ", currentNode);
-    // }
+    return "hello world";
+  }
 
-    return this;
+  print() {
+    var arr = [];
+    var current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
   }
 }
 
-// const list = new SinglyLinkedList();
-// list.push(27); // [27] head: 27 tail: 27 length: 1
-// list.push(21); // [27, 21] head: 27 tail: 21 length: 2
-// list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
-// list.pop(); // [27, 21] head: 27 tail: 21 length: 2
-// list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
-// list.shift(); // [21, 45] head: 21 tail: 45 length: 2
-// list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
-// list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
-// list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
-// list.get(4); // 45
-// list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
-// list.get(2); // 100
-// list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
-// list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-
-const testList = new SinglyLinkedList();
-testList.push(27); // [27] head: 27 tail: 27 length: 1
-testList.push(21); // [27, 21] head: 27 tail: 21 length: 2
-testList.push(77); // [27, 21, 77] head: 27 tail: 77 length: 3
-testList.push(14); // [27, 21, 77, 14] head: 27 tail: 14 length: 4
-testList.push(55); // [27, 21, 77, 14, 55] head: 27 tail: 55 length: 5
-console.log(testList);
-testList.reverse();
-console.log(testList);
+const list = new SinglyLinkedList();
+list.push(27); // [27] head: 27 tail: 27 length: 1
+list.push(21); // [27, 21] head: 27 tail: 21 length: 2
+list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
+list.pop(); // [27, 21] head: 27 tail: 21 length: 2
+list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
+list.shift(); // [21, 45] head: 21 tail: 45 length: 2
+list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
+list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
+list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
+list.get(4); // 45
+list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
+list.get(2); // 100
+list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
+list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+list.print();
