@@ -129,9 +129,10 @@ class SinglyLinkedList {
       this.pop();
     }
     let nodeBeforeRemovedNode = this.get(index - 1);
-    let nodeAfterRemovedNode = this.get(index + 1);
-    nodeBeforeRemovedNode.next = nodeAfterRemovedNode;
+    let removedNode = nodeBeforeRemovedNode.next;
+    nodeBeforeRemovedNode.next = removedNode.next;
     this.length--;
+    console.log(removedNode);
     return true;
   }
 }
@@ -151,4 +152,3 @@ list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
 list.get(2); // 100
 list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
 list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-console.log(list);
