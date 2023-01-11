@@ -147,20 +147,18 @@ class SinglyLinkedList {
       this.tail.next = null;
     }
 
-    // let oldHead = this.head;
-    // this.head = this.tail;
-    // this.tail = oldHead;
+    let oldH = this.head;
+    let oldT = this.tail;
+
+    oldT.next = this.get(this.length - 2);
+    oldH.next = null;
+
+    this.head = oldT;
+    this.tail = oldH;
 
     // for (let i = 1; i < this.length; i++) {
-    //   if (i === 1) {
-    //     console.log("Ulazil ovde");
-    //     let newNext = this.tail;
-    //     let currentNode = this.get(i);
-    //     currentNode.next = newNext;
-    //   }
-    //   newNext = this.get(i - 1);
-    //   currentNode = this.get(i);
-    //   currentNode.next = newNext;
+    //   let currentNode = this.get(i);
+    //   console.log("Trenutni Node je: ", currentNode);
     // }
 
     return this;
@@ -186,6 +184,9 @@ class SinglyLinkedList {
 const testList = new SinglyLinkedList();
 testList.push(27); // [27] head: 27 tail: 27 length: 1
 testList.push(21); // [27, 21] head: 27 tail: 21 length: 2
+testList.push(77); // [27, 21, 77] head: 27 tail: 77 length: 3
+testList.push(14); // [27, 21, 77, 14] head: 27 tail: 14 length: 4
+testList.push(55); // [27, 21, 77, 14, 55] head: 27 tail: 55 length: 5
 console.log(testList);
 testList.reverse();
 console.log(testList);
