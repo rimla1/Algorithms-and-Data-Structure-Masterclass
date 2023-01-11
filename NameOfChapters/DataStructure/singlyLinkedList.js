@@ -136,12 +136,8 @@ class SinglyLinkedList {
   }
 
   reverse() {
-    if (this.length <= 0) {
+    if (this.length < 2) {
       return null;
-    }
-    if (this.length === 1) {
-      this.head = this.get(0);
-      this.tail = this.get(0);
     }
     if (this.length === 2) {
       let oldHead = this.head;
