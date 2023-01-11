@@ -117,7 +117,7 @@ class SinglyLinkedList {
   }
 
   remove(index) {
-    if (index < 0 || index > this.length) {
+    if (index < 0 || index >= this.length) {
       return false;
     }
 
@@ -125,7 +125,7 @@ class SinglyLinkedList {
       this.shift();
     }
 
-    if (index === this.length) {
+    if (index === this.length - 1) {
       this.pop();
     }
     let nodeBeforeRemovedNode = this.get(index - 1);
@@ -149,4 +149,6 @@ list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
 list.get(4); // 45
 list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
 list.get(2); // 100
-list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 5
+list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
+list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+console.log(list);
