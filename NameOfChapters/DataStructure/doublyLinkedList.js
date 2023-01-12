@@ -25,11 +25,19 @@ class DoublyLinkedList {
     this.tail = node;
     this.length++;
   }
+
+  pop() {
+    if (!this.head) return null;
+    this.tail = this.tail.previous;
+    this.tail.next = null;
+    this.length--;
+  }
 }
 
 const list = new DoublyLinkedList();
-list.push(27);
-list.push(21);
-list.push(100);
-list.push(77);
+list.push(27); // [27]
+list.push(21); // [27, 21]
+list.push(100); // [27, 21, 100]
+list.push(77); // [27, 21, 100, 77]
+list.pop();
 console.log(list);
