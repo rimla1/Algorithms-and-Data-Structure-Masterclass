@@ -136,27 +136,21 @@ class SinglyLinkedList {
   }
 
   reverse() {
-    if (this.length < 2) {
-      return null;
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+      console.log("Ovo je node: ", node);
+      console.log("Ovo je prev: ", prev);
+      console.log("Ovo je next: ", next);
     }
-    if (this.length === 2) {
-      let oldHead = this.head;
-      this.head = this.tail;
-      this.head.next = oldHead;
-      this.tail = oldHead;
-      this.tail.next = null;
-    }
-
-    let oldH = this.head;
-    let oldT = this.tail;
-
-    oldT.next = this.get(this.length - 2);
-    oldH.next = null;
-
-    this.head = oldT;
-    this.tail = oldH;
-
-    return "hello world";
+    return this;
   }
 
   print() {
@@ -185,4 +179,6 @@ list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
 list.get(2); // 100
 list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
 list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+list.print();
+list.reverse();
 list.print();
