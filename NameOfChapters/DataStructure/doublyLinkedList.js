@@ -15,14 +15,21 @@ class DoublyLinkedList {
 
   push(val) {
     let node = new Node(val);
-    if (this.length === 0) {
+    if (!this.head) {
       this.head = node;
       this.tail = node;
     }
+    this.head.previous = null;
+    this.tail.next = node;
+    node.previous = this.tail;
+    this.tail = node;
+    this.length++;
   }
 }
 
 const list = new DoublyLinkedList();
 list.push(27);
 list.push(21);
+list.push(100);
+list.push(77);
 console.log(list);
