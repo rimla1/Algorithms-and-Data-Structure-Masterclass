@@ -146,9 +146,6 @@ class SinglyLinkedList {
       node.next = prev;
       prev = node;
       node = next;
-      console.log("Ovo je node: ", node);
-      console.log("Ovo je prev: ", prev);
-      console.log("Ovo je next: ", next);
     }
     return this;
   }
@@ -179,6 +176,6 @@ list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
 list.get(2); // 100
 list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
 list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-list.print();
-list.reverse();
-list.print();
+list.print(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+list.reverse(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+list.print(); // [ 45, 21, 200, 3, 7 ] head: 45 tail: 7 length: 5
