@@ -39,6 +39,8 @@ class DoublyLinkedList {
     this.head.previous = null;
     this.length--;
   }
+
+  unshift(val) {}
 }
 
 const list = new DoublyLinkedList();
