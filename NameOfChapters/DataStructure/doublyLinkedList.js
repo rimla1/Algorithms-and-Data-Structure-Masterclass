@@ -42,6 +42,10 @@ class DoublyLinkedList {
 
   unshift(val) {
     let node = new Node(val);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
   }
 }
 
