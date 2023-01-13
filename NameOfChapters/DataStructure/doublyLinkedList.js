@@ -40,7 +40,9 @@ class DoublyLinkedList {
     this.length--;
   }
 
-  unshift(val) {}
+  unshift(val) {
+    let node = new Node(val);
+  }
 }
 
 const list = new DoublyLinkedList();
