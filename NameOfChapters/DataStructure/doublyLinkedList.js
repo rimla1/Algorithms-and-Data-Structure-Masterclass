@@ -48,7 +48,7 @@ class DoublyLinkedList {
     }
     node.next = this.head;
     this.head.previous = node;
-    length++;
+    this.length++;
   }
 }
 
@@ -59,4 +59,5 @@ list.push(100); // [27, 21, 100]
 list.push(77); // [27, 21, 100, 77]
 list.pop(); // [27, 21, 100]
 list.shift(); // [21, 100]
+list.unshift(75); // [75, 21, 100]
 console.log(list);
