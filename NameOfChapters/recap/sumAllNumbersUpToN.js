@@ -8,3 +8,14 @@ const sumAllNumbersUpToN = (n) => {
 }
 
 sumAllNumbersUpToN(5)
+
+const sumAllNumbersUpToNInternetSolution = (n) => {
+    let sum = 0
+    for(let i = 1; i <= n; i++){
+        sum += i
+    }
+    console.log("Sum of all numbers: ", sum)
+    return sum
+}
+
+sumAllNumbersUpToNInternetSolution(3)
