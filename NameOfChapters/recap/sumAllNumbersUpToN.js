@@ -23,4 +23,9 @@ const addUpTo = (n) => {
     return n * (n + 1) / 2;
 }
 
+let timeBeforeFunction = performance.now()
 addUpTo(4)
+let timeAfterFunction = performance.now()
+
+console.log(`Time elapsed: ${(timeAfterFunction - timeBeforeFunction) / 1000} seconds`)
+
