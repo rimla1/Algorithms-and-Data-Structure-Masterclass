@@ -3,7 +3,6 @@ const sumAllNumbersUpToN = (n) => {
     for(let i = 1; i < n + 1; i++){
         sum += i
     }
-    console.log("Zbir svih brojeva je: ", sum)
     return sum
 }
 
@@ -14,8 +13,14 @@ const sumAllNumbersUpToNInternetSolution = (n) => {
     for(let i = 1; i <= n; i++){
         sum += i
     }
-    console.log("Sum of all numbers: ", sum)
     return sum
 }
 
 sumAllNumbersUpToNInternetSolution(3)
+
+// Solution without loop [formula]:
+const addUpTo = (n) => {
+    return n * (n + 1) / 2;
+}
+
+addUpTo(4)
