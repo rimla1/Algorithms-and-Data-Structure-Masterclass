@@ -17,11 +17,19 @@ const charTrack = (string) => {
 
     for(let char of string){
         char = char.toLowerCase()
-        if(/[a-z0-9]/.test(char)){
+        if(isAlphaNumeric(char)){
             charTracker[char] = ++charTracker[char] || 1
         } 
     }
     return charTracker
 }
 
-charTrack("Aaalmir")
+const isAlphaNumeric = (char) => {
+    const code = char.charCodeAt()
+    if(!(code > 47 && code < 58) && !(code > 64 && code < 91) && !(code > 96 && code < 123)){
+        return false
+    }
+    return true
+}
+
+charTrack("test TEST 123")
