@@ -1,16 +1,27 @@
-const charCount = (str) => {
-    const charCounter = {}
-    for(let i = 0; i < str.length; i++){
-        lowerChar = str[i].toLowerCase()
-        if(charCounter[str[i]] > 0){
-            console.log("Ovde sam", )
-            charCounter[str[i]]++
-        } else {
-                charCounter[str[i]] = 1
-        }
+// const charCount = (str) => {
+//     const charCounter = {}
+//     for(let i = 0; i < str.length; i++){
+//         const lowerChar = str[i].toLowerCase()
+//         if(charCounter[lowerChar] > 0){
+//             charCounter[lowerChar]++
+//         } else {
+//                 charCounter[lowerChar] = 1
+//         }
+//     }
+//     console.log(charCounter)
+//     return charCount
+// }
+
+const charTrack = (string) => {
+    const charTracker = {}
+
+    for(let char of string){
+        char = char.toLowerCase()
+        if(/[a-z0-9]/.test(char)){
+            charTracker[char] = ++charTracker[char] || 1
+        } 
     }
-    console.log(charCounter)
-    return charCount
+    return charTracker
 }
 
-charCount("Aaalmir")
+charTrack("Aaalmir")
