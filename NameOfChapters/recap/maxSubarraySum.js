@@ -9,6 +9,7 @@ const maxSubarraySum = (arrayOfNumbers, n) => {
     for(let i = 0; i < n; i++){
         maxSum += arrayOfNumbers[i]
     }
+    
     temp = maxSum
     for(let i = n; i < arrayOfNumbers.length; i++){
         temp = temp - arrayOfNumbers[i - n] + arrayOfNumbers[i]
@@ -18,5 +19,7 @@ const maxSubarraySum = (arrayOfNumbers, n) => {
     console.log(maxSum)
     return maxSum
 }
+
+
 
 maxSubarraySum([1,4,3,2,4,6,8,4,1,9], 3)
