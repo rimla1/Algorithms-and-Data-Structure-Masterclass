@@ -8,6 +8,7 @@ const countUniqueValues = (sortedArray) => {
 
     let arr = Object.keys(count).length
 
+
     return arr
 }
 
