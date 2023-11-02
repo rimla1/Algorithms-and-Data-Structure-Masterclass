@@ -16,4 +16,4 @@ const countUniqueValues1 = (sortedArray) => {
 
 
 
-console.log(countUniqueValues1([1, 1, 1, 2, 3, 4, 4, 4, 5, 7]))
+console.log(countUniqueValues1([1,1,2,2,2,2,3,4,4,4,4,4,4,4,4]))
