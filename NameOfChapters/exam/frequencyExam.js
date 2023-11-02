@@ -16,8 +16,6 @@ const anagramDetection = (string1, string2) => {
         string2Counter[string2[i]] = (string2Counter[string2[i]] || 0) + 1
     }
 
-    console.log(string1Counter, string2Counter)
-
     for (const letter in string1Counter) {
         if(!string2Counter[letter]){
             return false
@@ -33,3 +31,26 @@ const anagramDetection = (string1, string2) => {
 }
 
 anagramDetection("listen", "silent")
+
+
+// Are There Duplicates: Implement a function that checks if there are any duplicates in an array of numbers.
+
+const areThereDuplicates = (arrayOfNumbers) => {
+    if(arrayOfNumbers === 0){
+        return false
+    }
+
+    let counter = {}
+    for (const number of arrayOfNumbers) {
+        counter[number] = (counter[number] || 0) + 1
+    }
+    for(let key in counter){
+        if(counter[key] > 1){
+            return true
+        }
+    }
+
+    return false
+}
+
+areThereDuplicates([1,2,3,4,5,6,7,8,9])
