@@ -44,4 +44,22 @@ const collectOddValues = (nums) => {
     return result
 }
 
-collectOddValues([1,2,3,4,5,6,7,8,9,10,11,12,13])
+// collectOddValues([1,2,3,4,5,6,7,8,9,10,11,12,13])
+
+const collectOddValuesPureRecursion = (arrOfNumbers) => {
+    let oddArr = []
+
+
+    if(arrOfNumbers.length === 0){
+        return oddArr
+    }
+
+    if(arrOfNumbers[0] % 2 !== 0){
+        oddArr.push(arrOfNumbers[0])
+    }
+
+    oddArr = oddArr.concat(collectOddValuesPureRecursion(arrOfNumbers.splice(1)))
+    return oddArr
+}
+
+collectOddValuesPureRecursion([1,2,3,4,5,6,7,8,9,10,11,12,13])
