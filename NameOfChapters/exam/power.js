@@ -11,4 +11,14 @@ const power = (base, exponent) => {
     return result
 }
 
-power(5, 3)
+
+
+const powerCleanRecursion = (base, exponent) => {
+    if (exponent === 0) {
+        return 1;
+    }
+
+    return base * power(base, exponent - 1);
+}
+
+powerCleanRecursion(5, 3)
