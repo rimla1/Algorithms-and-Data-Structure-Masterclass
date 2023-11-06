@@ -21,4 +21,27 @@ const factorial = (num) => {
     return num * factorial(num - 1)
 }
 
-console.log(factorial(4))
+// factorial(4)
+
+const collectOddValues = (nums) => {
+    const result = []
+
+
+
+    const findOddNumber = (arrOfNumbers) => {
+        if(arrOfNumbers.length === 0){
+            return result
+        }
+        if(nums[arrOfNumbers.length - 1] % 2){
+            result.push(nums[arrOfNumbers.length - 1])
+        }
+        arrOfNumbers.pop()
+        findOddNumber(arrOfNumbers)
+    }
+
+    findOddNumber(nums)
+
+    return result
+}
+
+collectOddValues([1,2,3,4,5,6,7,8,9,10,11,12,13])
