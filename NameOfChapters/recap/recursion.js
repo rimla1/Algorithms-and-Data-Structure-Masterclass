@@ -14,4 +14,11 @@ const sumRange = (num) => {
     return num + sumRange(num - 1)
 }
 
-sumRange(9)
+// sumRange(9)
+
+const factorial = (num) => {
+    if(num === 1) return 1
+    return num * factorial(num - 1)
+}
+
+console.log(factorial(4))
