@@ -1,6 +1,6 @@
 const productOfArray = (arrOfNums) => {
 
-    if(arrOfNums.length === 0) return 0;
+    if(arrOfNums.length === 0) return 1;
     return arrOfNums[0] + productOfArray(arrOfNums.splice(1))
 }
 
