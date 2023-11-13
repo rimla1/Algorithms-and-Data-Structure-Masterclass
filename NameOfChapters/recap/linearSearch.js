@@ -1,16 +1,13 @@
 const linearSearch = (arrOFNumbers, wantedNumber) => {
     for(let i = 0; i < arrOFNumbers.length; i++){
         if(arrOFNumbers[i] === wantedNumber){
-            let index = arrOFNumbers.indexOf(arrOFNumbers[i])
-            console.log(index)
-            return index
+            return i
         }
     }
-    console.log("-1")
     return -1
 }
 
-// linearSearch([1,2,3,4,5,6,7,8,9], 4)
+linearSearch([1,2,3,4,5,6,7,8,9], 4)
 
 const linearSearchRecursion = (arrOFNumbers, wantedNumber) => {
     if(arrOFNumbers.length < 1){
@@ -25,4 +22,4 @@ const linearSearchRecursion = (arrOFNumbers, wantedNumber) => {
     linearSearch(arrOFNumbers, wantedNumber)
 }
 
-linearSearchRecursion([1,2,3,4,5,6,7,8,9], 4)
+// linearSearchRecursion([1,2,3,4,5,6,7,8,9], 4)
