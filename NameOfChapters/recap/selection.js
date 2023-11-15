@@ -12,8 +12,12 @@ const selectionSort = (arr) => {
                 smallestValue = j
             }
        }
-       swap(arr, smallestValue, i)
+       if(i !== smallestValue){
+        swap(arr, smallestValue, i)
+       }
+
     }
+    console.log(arr)
     return(arr)
 }
 
