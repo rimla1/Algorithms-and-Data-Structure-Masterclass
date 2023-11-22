@@ -28,6 +28,18 @@ const mergeSortedArrays = (arr1, arr2) => {
 };
 
 
-mergeSortedArrays([3, 7, 9, 12, 50], [5, 10, 11, 30, 37, 45]);
 
+
+
+
+const mergeSort = (arr) => {
+
+    if(arr.length <= 1) return arr
+    let middle = Math.floor(arr.length/2)
+    let left = mergeSort(arr.slice(0, middle))
+    let right = mergeSort(arr.slice(middle))
+    return mergeSortedArrays(left, right)
+}
+
+mergeSort([5,4,9,8,12,14,19,22,16,18])
 
