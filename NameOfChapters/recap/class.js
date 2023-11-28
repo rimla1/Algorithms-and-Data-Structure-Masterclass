@@ -4,6 +4,7 @@ class Student {
         this.surname =surname
         this.grade = year
         this.absence = 0
+        this.scores = []
     }
 
     greeting(){
@@ -18,13 +19,22 @@ class Student {
         return `${this.name} ${this.surname} has been absence: ${this.absence}`
     }
 
+    addScore(score){
+        this.scores.push(score)
+    }
+
+    calculateAverage(){
+        let scores = this.scores
+        let sum = 0
+        for(let i = 0; i < scores.length; i++){
+            sum += scores[i]
+        }
+        let average = sum / scores.length
+        return average
+    }
+
 }
 
 const firstStudent = new Student("Almir", "Muminovic", 4)
 const secondStudent = new Student("Rimla", "Muminovic", 3)
-firstStudent.greeting()
-secondStudent.greeting()
-firstStudent.markAbsence()
-firstStudent.markAbsence()
-firstStudent.markAbsence()
-firstStudent.markAbsence()
+
