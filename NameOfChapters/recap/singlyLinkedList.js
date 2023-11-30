@@ -42,15 +42,54 @@ class SinglyLinkedList {
         }
         return current
     }
+
+    shift(){
+        if(!this.head) return undefined
+        let oldHead = this.head
+        this.head = oldHead.next
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+
+        return oldHead
+    }
+
+    unshift(val){
+        let newNode = new Node(val)
+        if(!this.head){
+            this.head = newNode
+            this.tail = this.head
+        } else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+
+        this.length++
+        return this
+    }
     
+    get(index){
+        if(index >= this.length || index < 0) return null
+        let counter = 0
+        let tempNode = this.head
+        while(counter < index){
+            tempNode = tempNode.next
+            counter++
+        }
+        return tempNode
+    }
 
-
+    set(index, newVal){
+        let node = this.get(index)
+        if(!node) return false
+        node.val = newVal
+        return true
+    }
 
 }
 
 const list = new SinglyLinkedList()
-list.push(30)
-list.push(27)
-list.push(78)
-list.pop()
-console.log(list)
+
+
+
