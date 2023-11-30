@@ -111,21 +111,14 @@ class SinglyLinkedList {
 
     remove(index){
         if(index < 0 || index >= this.length ) return false
-        if(index === this.length - 1){
-            this.pop()
-            return true
-        }
-        if(index === 0){
-            this.shift()
-            return true
-        }
-        // let nodeToBeDeleted = this.get(index)
+        if(index === this.length - 1) return this.pop()
+        if(index === 0)return this.shift()
+           
         let prevNode = this.get(index - 1)
-        prevNode.next = prevNode.next.next
-        // let temp = nodeToBeDeleted.next
-        // prevNode.next = temp
+        let removedNode = prevNode.next
+        prevNode.next = removedNode.next
         this.length--
-        return true
+        return removedNode
     }
 
 }
