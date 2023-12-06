@@ -125,17 +125,17 @@ class SinglyLinkedList {
         if(this.length <= 0) return false
         if(this.length === 1) return this
 
-        let node = this.head
+        let node = this.head   
         this.head = this.tail
         this.tail = node
 
-        let prev = null;
-        let next;
+        let prev = null;     
+        let next;            
         for(let i = 0; i < this.length; i++){
-            next = node.next
-            node.next = prev
-            prev = node
-            node = next
+            next = node.next 
+            node.next = prev 
+            prev = node 
+            node = next 
         }
         return this
     }
@@ -143,6 +143,8 @@ class SinglyLinkedList {
 }
 
 const list = new SinglyLinkedList()
+
+// 30 -> 58 -> 87 -> 92 -> 99 -> NULL
 
 
 list.push(30)
