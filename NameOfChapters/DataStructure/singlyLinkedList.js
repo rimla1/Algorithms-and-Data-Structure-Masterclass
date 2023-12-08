@@ -162,20 +162,32 @@ class SinglyLinkedList {
 }
 
 const list = new SinglyLinkedList();
-list.push(27); // [27] head: 27 tail: 27 length: 1
-list.push(21); // [27, 21] head: 27 tail: 21 length: 2
-list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
-list.pop(); // [27, 21] head: 27 tail: 21 length: 2
-list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
-list.shift(); // [21, 45] head: 21 tail: 45 length: 2
-list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
-list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
-list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
-list.get(4); // 45
-list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
-list.get(2); // 100
-list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
-list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-list.print(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-list.reverse(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
-list.print(); // [ 45, 21, 200, 3, 7 ] head: 45 tail: 7 length: 5
+list.push(5)
+
+
+
+// list.push(27); // [27] head: 27 tail: 27 length: 1
+// list.push(21); // [27, 21] head: 27 tail: 21 length: 2
+// list.push(13); // [27, 21, 13] head: 27 tail: 13 length: 3
+// list.pop(); // [27, 21] head: 27 tail: 21 length: 2
+// list.push(45); // [27, 21, 45] head: 27 tail: 45 length: 3
+// list.shift(); // [21, 45] head: 21 tail: 45 length: 2
+// list.unshift(79); // [79, 21, 45] head: 79 tail: 45 length: 3
+// list.unshift(3); // [3, 79, 21, 45] head: 3 tail: 45 length: 4
+// list.unshift(7); // [7, 3, 79, 21, 45] head: 7 tail: 45 length: 5
+// list.get(4); // 45
+// list.set(2, 100); // [7, 3, 100, 21, 45] head: 7 tail: 45 length: 5
+// list.get(2); // 100
+// list.insertion(3, 200); // [7, 3, 100, 200, 21, 45] head: 7 tail: 45 length: 6
+// list.remove(2); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+// list.print(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+// list.reverse(); // [7, 3, ,200, 21, 45] head: 7 tail: 45 length: 5
+// list.print(); // [ 45, 21, 200, 3, 7 ] head: 45 tail: 7 length: 5
+
+
+
+
+
+
+
+
