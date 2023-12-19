@@ -71,7 +71,7 @@ class Node {
 
     DFSpreOrder(){
         let visited = [];
-        let current = this.root
+
         let traverse = (node) => {
             visited.push(node.value)
             if(node.left){
@@ -81,7 +81,7 @@ class Node {
                 traverse(node.right)
             }
         }
-        traverse(current)
+        traverse(this.root)
         return visited
     }
 
@@ -122,9 +122,13 @@ class Node {
   
   const bst = new BinarySearchTree();
   bst.insert(30);
-  bst.insert(45);
   bst.insert(15);
+  bst.insert(45);
   bst.insert(7);
-  bst.DFSinOrder();
+  bst.insert(5);
+  bst.insert(9);
+
+
+  console.log(bst.DFSpreOrder());
 
 
