@@ -5,7 +5,6 @@ const hash = (string, lengthOfArray) => {
     }
 
     let key = hashedResult % lengthOfArray
-    console.log(key)
     return key
 }
 
@@ -15,7 +14,6 @@ const hashh = (key, arrayLength) => {
         let value = char.charCodeAt(0) - 96
         total = (total + value) % arrayLength 
     }
-    console.log(total)
     return total
 }
 
