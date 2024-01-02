@@ -83,6 +83,18 @@ class HashTable {
         return valuesArr
     }
 
+    keys(){
+        let keysArr = []
+        for(let i = 0; i < this.keyMap.length; i++){
+            if(this.keyMap[i]){
+                for(let j = 0; j < this.keyMap[i].length; j++){
+                    keysArr.push(this.keyMap[i][j][0])
+                }
+            }
+        }
+        return keysArr
+    }
+
   }
 
 const hashTable = new HashTable
@@ -90,5 +102,5 @@ hashTable.set("name", "Almir")
 hashTable.set("aemn", "Rimla")
 hashTable.set("surname", "Muminovic")
 hashTable.set("age", "21")
-console.log(hashTable.values())
+console.log(hashTable.keys())
 
