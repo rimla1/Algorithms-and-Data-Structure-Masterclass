@@ -16,3 +16,9 @@ const kidsWithCandies = (candies, extraCandies) => {
     }
     return result
 };
+
+// for(let i =0; i < candies.length; i++){
+//     if(candies[i] + extraCandies >= kidWithMostCandies){
+//         result.push(candies[i] + extraCandies >= kidWithMostCandies)
+//     }
+// }
