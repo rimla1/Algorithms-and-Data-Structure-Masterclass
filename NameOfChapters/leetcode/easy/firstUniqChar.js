@@ -1,16 +1,19 @@
 const firstUniqChar = (s) => {
+    let arr = new Array(26).fill(0);
 
-    let lookup = {};
-    for(let i = 0; i < s.length; i++){
-        lookup[s[i]] = (lookup[s[i]] || 0) + 1
+    for (let i = 0; i < s.length; i++ ) {
+        let index = s.charCodeAt(i) - 97;
+        arr[index]++;
     }
-    let uniqueLetter;
-    for(key in lookup){
-        if(lookup[key] === 1) {
-            uniqueLetter = key
-            break
+
+    for (let i = 0; i < s.length; i++ ) {
+        let index = s.charCodeAt(i) - 97;
+        if(arr[index] == 1) {
+            return i;
         }
     }
-    return s.indexOf(uniqueLetter)
+
+    return -1;
 };
 
+firstUniqChar("almir")
