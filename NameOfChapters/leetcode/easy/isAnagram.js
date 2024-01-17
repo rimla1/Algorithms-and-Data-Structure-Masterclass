@@ -1,4 +1,4 @@
-const isAnagram = (s, t) => {
+var isAnagram = (s, t) => {
   if (s.length !== t.length) return false;
   let sLookup = {};
   let tLookup = {};
