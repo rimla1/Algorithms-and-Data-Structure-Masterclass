@@ -3,8 +3,8 @@ class Graph {
     this.adjacencyList = {};
   }
 
-  addVertex(name){
-    this.adjacencyList[name] = []
+  addVertex(vertex){
+    if(!this.adjacencyList[vertex]) this.adjacencyList[vertex] = []
   }
 
   getAdjacencyList(){
