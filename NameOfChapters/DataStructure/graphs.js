@@ -24,6 +24,15 @@ class Graph {
   }
 
 
+  deleteVertex(vertex1){
+    if(this.adjacencyList[vertex1]){
+        delete this.adjacencyList[vertex1]
+        for(let key in this.adjacencyList){
+            this.adjacencyList[key] = this.adjacencyList[key].filter(vertex => vertex !== vertex1)
+        }
+    }
+  }
+
 }
 
 const graph = new Graph()
@@ -39,4 +48,6 @@ graph.addEdge("Tokyo", "Berlin")
 graph.addEdge("Tokyo", "Paris")
 graph.getAdjacencyList()
 graph.deleteEdge("Belgrade", "Paris")
+graph.getAdjacencyList()
+graph.deleteVertex("Belgrade")
 graph.getAdjacencyList()
