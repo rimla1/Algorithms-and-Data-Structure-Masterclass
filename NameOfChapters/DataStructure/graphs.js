@@ -33,21 +33,42 @@ class Graph {
     }
   }
 
+  DFSrecursiveOuter(vertex){
+    let visited = {}
+    let result = []
+    const DFSrecursiveIner = (vertex) => {
+      if(!vertex) return null
+      visited[vertex] = true
+      result.push(vertex)
+      this.adjacencyList[vertex].forEach(neighbourVertex => {
+        if(!visited[neighbourVertex]){
+          DFSrecursiveIner(neighbourVertex)
+        }
+      });
+
+    }
+    DFSrecursiveIner(vertex)
+
+
+    return result
+  }
+
 }
 
 const graph = new Graph()
-graph.addVertex("Tokyo")
-graph.addVertex("Paris")
-graph.addVertex("Berlin")
-graph.addVertex("Belgrade")
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addVertex("D")
+graph.addVertex("E")
+graph.addVertex("F")
 graph.getAdjacencyList()
-graph.addEdge("Belgrade", "Berlin")
-graph.addEdge("Belgrade", "Paris")
-graph.addEdge("Paris", "Berlin")
-graph.addEdge("Tokyo", "Berlin")
-graph.addEdge("Tokyo", "Paris")
+graph.addEdge("A", "B")
+graph.addEdge("A", "C")
+graph.addEdge("B", "D")
+graph.addEdge("C", "E")
+graph.addEdge("D", "E")
+graph.addEdge("D", "F")
+graph.addEdge("E", "F")
 graph.getAdjacencyList()
-graph.deleteEdge("Belgrade", "Paris")
-graph.getAdjacencyList()
-graph.deleteVertex("Belgrade")
-graph.getAdjacencyList()
+graph.DFSrecursiveOuter("A")
