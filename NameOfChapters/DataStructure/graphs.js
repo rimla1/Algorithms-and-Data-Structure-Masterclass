@@ -49,8 +49,28 @@ class Graph {
     }
     DFSrecursiveIner(vertex)
 
-
+    console.log(result)
     return result
+  }
+
+  DFSiterative(start){
+    let stack = []
+    let discovered = {}
+    let result = []
+    stack.push(start)
+    while(stack.length !== 0){
+      let vertex = stack.pop()
+      if(!discovered[vertex]){
+        result.push(vertex)
+        discovered[vertex] = true
+        this.adjacencyList[vertex].forEach(v => {
+          stack.push(v)
+        })
+      }
+    }
+    console.log(result)
+    return result
+
   }
 
 }
@@ -72,3 +92,4 @@ graph.addEdge("D", "F")
 graph.addEdge("E", "F")
 graph.getAdjacencyList()
 graph.DFSrecursiveOuter("A")
+graph.DFSiterative("A")
