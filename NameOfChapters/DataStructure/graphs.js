@@ -48,8 +48,6 @@ class Graph {
 
     }
     DFSrecursiveIner(vertex)
-
-    console.log(result)
     return result
   }
 
@@ -68,7 +66,26 @@ class Graph {
         })
       }
     }
-    console.log(result)
+    return result
+
+  }
+
+  BFS(start){
+    let queue = []
+    let result = []
+    let visited = {start:true}
+    queue.push(start)
+    visited[start] = true
+    while(queue.length !== 0){
+      let visitedVertex = queue.shift()
+      result.push(visitedVertex)
+      this.adjacencyList[visitedVertex].forEach(v => {
+        if(!visited[v]){
+          visited[v] = true
+          queue.push(v)
+        }
+      })
+    }
     return result
 
   }
@@ -93,3 +110,4 @@ graph.addEdge("E", "F")
 graph.getAdjacencyList()
 graph.DFSrecursiveOuter("A")
 graph.DFSiterative("A")
+graph.BFS("A")
