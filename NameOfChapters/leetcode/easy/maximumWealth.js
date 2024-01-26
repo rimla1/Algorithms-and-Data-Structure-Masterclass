@@ -11,7 +11,3 @@ const maximumWealth = (accounts) => {
 };
 
 maximumWealth([[2,8,7],[7,1,3],[1,9,5]])
-
-// I would set richest person to be 0, if it's only positive wealth, or -infinity if they own a bank
-// calculate the next account and compare to current richest person
-// return richest person
