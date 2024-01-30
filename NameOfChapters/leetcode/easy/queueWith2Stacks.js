@@ -40,10 +40,6 @@ class Queue{
         return this.popStack.length + this.pushStack.length === 0
     }
 
-    getBothStacks(){
-        console.log(this.pushStack, this.popStack)
-    }
-
 }
 
 let queue = new Queue()
